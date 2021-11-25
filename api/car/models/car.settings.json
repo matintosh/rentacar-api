@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "name": "car",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "model": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "plate": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "pictures": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "booking": {
+      "via": "car",
+      "model": "booking"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "branch": {
+      "via": "cars",
+      "model": "branch"
+    }
+  }
+}

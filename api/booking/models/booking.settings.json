@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "booking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "car": {
+      "via": "booking",
+      "model": "car"
+    },
+    "client": {
+      "via": "booking",
+      "model": "client"
+    }
+  }
+}

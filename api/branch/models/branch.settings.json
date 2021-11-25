@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "branches",
+  "info": {
+    "name": "Branch",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "cars": {
+      "collection": "car",
+      "via": "branch"
+    },
+    "users": {
+      "via": "branch",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}
