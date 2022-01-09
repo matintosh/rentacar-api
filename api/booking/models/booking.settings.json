@@ -25,6 +25,10 @@
     "client": {
       "via": "booking",
       "model": "client"
+    },
+    "events": {
+      "via": "booking",
+      "collection": "event"
     }
   }
 }

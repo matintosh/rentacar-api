@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "cars",
+  "collectionName": "events",
   "info": {
-    "name": "car",
-    "description": ""
+    "name": "event"
   },
   "options": {
     "increments": true,
@@ -12,17 +11,19 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "model": {
+    "title": {
       "type": "string"
     },
-    "brand": {
+    "description": {
       "type": "string"
     },
-    "plate": {
-      "type": "string"
+    "booking": {
+      "model": "booking",
+      "via": "events"
     },
-    "price": {
-      "type": "integer"
+    "car": {
+      "model": "car",
+      "via": "events"
     },
     "pictures": {
       "collection": "file",
@@ -35,21 +36,6 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-    },
-    "booking": {
-      "via": "car",
-      "model": "booking"
-    },
-    "year": {
-      "type": "integer"
-    },
-    "branch": {
-      "via": "cars",
-      "model": "branch"
-    },
-    "events": {
-      "via": "car",
-      "collection": "event"
     }
   }
 }
